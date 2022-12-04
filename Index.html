@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+         <meta charset="UTF-8">
+         <title>Round Seal Coffee</title>
+         <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril Fatface">
+         <style>
+             body {
+                 background-color: #BAB395
+             }
+             h1 {
+                font-family: 'Abril Fatface';
+                font-size: 60px;
+                color: #FFFFFF
+             }
+             h2 {
+                font-family: 'Barlow Semi Condensed',sans-serif;
+                font-size: 40px;
+                font-weight: 100;
+                color: #FFFFFF
+             }
+            p {
+                margin:auto;
+                font-family: 'Barlow Semi Condensed';
+                color: #FFFFFF;
+            }
+             
+             .fa {
+              padding: 10px;
+              font-size: 20px;
+                transform: translate(-10%,-100%)
+              width: 5px;
+                height: 35px;
+              text-align: center;
+              text-decoration: none;
+              margin: 10px 10px;
+              background: #8D8B7E;
+                 color: white
+                  
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+            .center {
+              margin: auto;
+              position:absolute;
+              top:0px;
+              left: 280px;
+                
+            }
+             
+            .sidebar {
+                height: 100%;
+                width: 250px;
+                position: fixed;
+                left: 0;
+                top: 0;
+                padding-top: 40px;
+                background-color: #F0EBD2;
+                font-family:  'Abril Fatface';
+            }
+
+            .sidebar div {
+                padding: 8px;
+                font-family: 'Quicksand',sans-serif;
+                color: #FFFFFF
+                font-size: 11px;
+                display: block;
+            }
+
+            .body-text {
+                margin-left: 50px;
+                margin-top: 80px;
+                position: relative;
+                font-size: 18px;
+                
+            }
+            
+            /* Sidebar links */
+            .sidebar a {
+              display: block;
+              color: dimgray;
+              padding: 32px;
+              text-decoration: none;
+            }
+
+            /* Active/current link */
+            .sidebar a.active {
+              background-color: #8D8B7E;
+              color: white;
+                left: 20%
+            }
+
+            /* Links on mouse-over */
+            .sidebar a:hover:not(.active) {
+              background-color: #8D8B7E;
+              color: white;
+            }
+             
+             
+            hr.solid {
+                border-top: 2px solid #F0EBD6;
+             }
+             
+             .gallerypad{
+                 padding: 20px;
+                 margin: 20px;
+                 background-color: beige
+             }
+             
+             
+             /* HORIZONTAL SCROLL */
+            .scroll-container{
+              margin: auto;
+              overflow: auto;
+              white-space: nowrap;
+              padding: 5px 70px 5px 20px;
+              background: transparent;
+              height: 100%;
+              border-radius:15px;
+            }
+
+            .gridscroll{
+               display: inline-block;
+              color: white;
+              text-align: center;
+              padding: 14px;
+              text-decoration: none;
+            }
+             
+             .gallery-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+}
+
+.gallery-item {
+  padding: .5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: #333;
+  color: #d9d9d9;
+  scroll-snap-align: center;
+}
+
+            .gridscroll img {
+              margin-right:22px;
+            }
+             
+             
+             * {
+                  box-sizing: border-box;
+                }
+
+                /* Position the image container (needed to position the left and right arrows) */
+                .container {
+                  position: relative;
+                }
+
+                /* Hide the images by default */
+                .mySlides {
+                  display: none;
+                }
+
+                /* Add a pointer when hovering over the thumbnail images */
+                .cursor {;
+                }
+
+                /* Next & previous buttons */
+                .prev,
+                .next {
+                  cursor: pointer;
+                  position: absolute;
+                  top: 40%;
+                  width: auto;
+                  padding: 16px;
+                  margin-top: -50px;
+                  color: white;
+                  font-weight: bold;
+                  font-size: 20px;
+                  border-radius: 0 3px 3px 0;
+                  user-select: none;
+                  -webkit-user-select: none;
+                }
+
+                /* Position the "next button" to the right */
+                .next {
+                  right: 0;
+                  border-radius: 3px 0 0 3px;
+                }
+
+                /* On hover, add a black background color with a little bit see-through */
+                .prev:hover,
+                .next:hover {
+                  background-color: rgba(0, 0, 0, 0.8);
+                }
+
+                /* Number text (1/3 etc) */
+                .numbertext {
+                  color: #f2f2f2;
+                  font-size: 12px;
+                  padding: 8px 12px;
+                  position: absolute;
+                  top: 0;
+                }
+
+                /* Container for image text */
+                .caption-container {
+                  text-align: center;
+                  background-color: #FFFFFF;
+                  padding: 2px 16px;
+                  color: white;
+                }
+
+                .row:after {
+                  content: "";
+                  display: table;
+                  clear: both;
+                }
+
+                /* Six columns side by side */
+                .column {
+                  float: left;
+                  width: 16.66%;
+                }
+
+                /* Add a transparency effect for thumnbail images */
+                .demo {
+                  opacity: 0.6;
+                }
+
+                .active,
+                .demo:hover{
+                    opacity: 1;}
+                
+                .active,
+                .demo:hover . text{
+                  opacity: 1;
+                
+        </style>
+             
+
+
+    </head>
+
+
+    <body>
+    
+        <div class="sidebar">
+            <div>
+                <img alt="Seal" src="D:\Coffee Sites\Seal.png"; width=90%; left=100%>
+            </div>
+          <a href="#Home">Home</a>
+          <a href="#Photo_Gallery">Photo Gallery</a>
+          <a href="#About Me">About Me</a>
+          <a href="#Contact">Contact</a>
+        </div>
+        
+        
+        
+
+        <!-- Main page heading -->
+            
+            
+            <div class="center";>
+                <div class="body-text">
+                    <img id="Home" alt="Home" src="D:\Coffee Sites\title.png"; width=900px; position=sticky>
+                    <h2>Our first cafe is opening in: </h2>
+                    <p id="Home"> </p>
+                    <h1 id="demo";font-color=#FFFFFF></h1>
+                    <script>
+                    var countDownDate = new Date("Jan 10, 2027 09:00:00").getTime();
+
+                    var x = setInterval(function() {
+
+                      var now = new Date().getTime();
+                      var distance = countDownDate - now;
+                      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                      + minutes + "m " + seconds + "s ";
+                      if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "EXPIRED";
+                      }
+                    }, 1000);
+                    </script>
+
+                    <p>Good day and welcome to Round Seal!<br> <br></p>
+                    <p>Round Seal Coffee is a special project that I've been contemplating on for years. I am a big coffee fan and have traveled around the world to find the perfect cup, and I am amused by how coffee has evolved from a beverage to means of expression. One sip is all you need to taste a culture or a philosophy, and I thought to myself that one day I would want to provide this elevated journey to people akin and afar.<br> <br></p>
+                    <p>But the truth is I am still trying to figure out who I am. I think it is important that my coffee shop speaks my story, and my story is still in the works. I live in the best and the worst of times. Everyday I learn and I stay baffled. So I decided to put off my project until I could understand myself better, or at least understand better how I see the world.<br> <br></p>
+
+                    <p>The deadline I've set for myself is my 30th birthday and I am excited for the day to come and for Round Seal to meet you. Before that, you're welcomed to join me in brewing the Round Seal story together.<br> <br> <br> <br></p>
+                    <hr class="solid">
+
+                    <p><br> </p>
+                    <h2 id="Photo_Gallery">Photo Gallery</h2>
+                    <p>Here are memorabilia from my self-learning journey to become a coffee master. I have received professionally training and am now a certified barista. It has been great fun. <br> <br> </p>
+
+               
+                    <!-- Container for the image gallery -->
+                    <div class="container">
+
+                      <!-- Full-width images with number text -->
+                      <div class="mySlides">
+                        <div class="numbertext">1 / 6</div>
+                          <img src="D:\Coffee Sites\gallery 1.png" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">2 / 6</div>
+                          <img src="D:\Coffee Sites\gallery 1.png" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">3 / 6</div>
+                          <img src="D:\Coffee Sites\gallery 1.png" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">4 / 6</div>
+                          <img src="D:\Coffee Sites\gallery 1.png" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">5 / 6</div>
+                          <img src="D:\Coffee Sites\gallery 1.png" style="width:100%">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">6 / 6</div>
+                          <img src="D:\Coffee Sites\gallery 1.png" style="width:100%">
+                      </div>
+
+                      <!-- Next and previous buttons -->
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                      <!-- Image text -->
+                      <div class="caption-container">
+                        <p id="caption"></p>
+                      </div>
+
+                      <!-- Thumbnail images -->
+                      <div class="row">
+                        <div class="column">
+                          <img class="demo cursor" src="D:\Coffee Sites\gallery 1.png" style="width:100%" onclick="currentSlide(1)" alt="Nov 2021" data-hover="hello">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="D:\Coffee Sites\gallery 2.png" style="width:100%" onclick="currentSlide(2)" alt="Dec 2021">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="D:\Coffee Sites\gallery 3.png" style="width:100%" onclick="currentSlide(3)" alt="Jan 2022">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="D:\Coffee Sites\gallery 4.png" style="width:100%" onclick="currentSlide(4)" alt="Mar 2022">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="D:\Coffee Sites\gallery 7.png" style="width:100%" onclick="currentSlide(5)" alt="May 2022">
+                        </div>
+                        <div class="column">
+                          <img class="demo cursor" src="D:\Coffee Sites\gallery 9.png" style="width:100%" onclick="currentSlide(6)" alt="Oct 2022">
+                        </div>
+                      </div>
+                    </div>
+                    
+                
+              
+                    <p><br> <br> <br> <br>  </p>
+                    
+                                  <hr class="solid">  
+                    
+                    <p></p>
+                    <h2 id="About Me">About Me</h2>
+                   <img src="D:\Coffee Sites\self picture.png" style="width:10%" alt="self" >
+ 
+                        <p font-size: 10pt><br> <br>My name is Captain Seal but you can call me Sophie. I grew up in Southern China with little exposure to coffee in my childhood. At the age of 15, I came to the United States and began exploring the world of coffee. I was blessed with the opportunity to spend my college years in NYC wondering around coffee shops and taking solo trips to Seattle / Hawaii and other parts of the world for more caffeinated adventures.<br> <br>After graduating from college I returned to Asia and worked as an investment banker, and used to consume 3-4 espresso drinks every day. I am now working at a startup back in China, and I love making and studying coffee in my spare time. Excited for where life will take me next. <br> <br>I'm passionate about seals but... I am not sure why. They're just fun to watch. Wish I could be raising a seal but am just raising two cats and my husband currently. <br> <br> <br> <br> </p>
+                    
+                    <hr class="solid">
+
+                    <h2 id="Contact">Contact</h2>
+                    <p> Let me know if you have any questions or would like to be part of the journey! <br> <br> </p>
+                    <a href="https://www.instagram.com/munchingwithwang/" class="fa fa-instagram"></a>
+                    <a href="http://linkedin.com/in/sophiewang01" class="fa fa-linkedin"></a>
+                    <a href="mailto:sophiewang0592@gmail.com" class="fa fa-google"></a>
+                    <!-- A paragraph -->
+
+                    <p><br> <br> <br> <br>  </p>
+
+                </div>
+            </div>
+
+        
+    </body>
+
+
+</html>
+
